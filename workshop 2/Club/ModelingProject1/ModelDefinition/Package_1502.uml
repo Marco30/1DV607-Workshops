@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ec4637c7-5eed-4d8b-90f8-9c1a39eebfa2"
+  name="Club"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="71156131-cd63-4ef6-938a-afd17dc18735"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DClub"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a3171c95-6160-4213-8b0f-97b4a770ffed"
+        LastKnownName="Controller"
+        LastKnownLocation="Package1_1502.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ecd31f72-e2f1-4c4a-a0f2-f1b40a9d60e4"
+        LastKnownName="Model"
+        LastKnownLocation="Package2_1502.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="0194d49b-263d-4daf-a2b0-677d5355075b"
+        LastKnownName="View"
+        LastKnownLocation="Package_1503.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

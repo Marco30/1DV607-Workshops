@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a3171c95-6160-4213-8b0f-97b4a770ffed"
+  name="Controller"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="abeb8f51-51c1-406f-8899-274b2a73910c"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DClub.Controller"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="45f69136-0373-4cba-88e2-f5ba1919ac09">
+      <profileInstance
+        Id="9cbbaadf-b958-4a91-addb-8166f8b509d9"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="22e2fefd-cc44-4ad3-a113-9a0df9446523"
+        name="MenuChoice"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="7704b7d5-103f-494e-a0a4-d13683a87a22"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.Controller Type%3DMenuChoice"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="581a5dcf-7a9d-4fe0-a79b-626942bbbb15"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="61345c8d-d173-4dd2-89bc-ba28b9fc5a4a">
+                <propertyInstance
+                  Id="7508cc96-cd04-40ff-a752-73c3b62d826b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e4f5dedc-3b64-46da-b047-90e098199dba">
+                <propertyInstance
+                  Id="5836c08c-01bc-4999-8732-287e3380e6c0"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5d99204f-07fa-4125-91c5-e7ce0cb67deb">
+                <propertyInstance
+                  Id="39451462-3dc5-493d-8809-b9754bf1b7fb"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="46d84270-a738-4836-8a0d-ba0e46cacbf9">
+                <propertyInstance
+                  Id="da23ec10-b9f2-4186-be1e-56d4f4787942"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="afa021cf-a1c4-4342-999e-86bcbb29d672">
+                <propertyInstance
+                  Id="a7761051-e47c-490e-8611-0a7fbe6b9f25"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="e53e13e6-d20b-4a1b-a0e3-eb000554da8b"
+            isDerived="false"
+            sourceEndRoleName="MenuChoice"
+            targetEndRoleName="ViewMessage"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b9c42a72-13fe-45c0-8cd4-41ff7e5fa10f"
+              LastKnownName="ViewMessage"
+              LastKnownLocation="Package_1503.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="feb517e1-fc7e-4af1-9e80-cbc3a9c2480f"
+                  name="MenuChoice"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="241bb879-0344-4172-a229-1a47de819c41"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="62bc7849-9835-4248-ae33-f714a1272ed5"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cde997c4-5ef6-46f8-998e-ec509403c20d"
+                  name="ViewMessage"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="004702cc-c8b0-4dad-b024-406ebc7f168e"
+            isDerived="false"
+            sourceEndRoleName="MenuChoice"
+            targetEndRoleName="MenuView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="c0c2d84f-8fea-443c-9a35-a9e1b0faf00b"
+              LastKnownName="MenuView"
+              LastKnownLocation="Package_1503.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="46260e5a-cbb2-41d7-bde7-b2d16bc5e963"
+                  name="MenuChoice"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1d47d39c-4b0c-4d96-988a-b88cd761c35c"
+                  name="MenuView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ecbaceee-030b-4a73-ae61-2212b3e2e237"
+            isDerived="false"
+            sourceEndRoleName="MenuChoice"
+            targetEndRoleName="Boat"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="36b693ed-d292-4811-a47a-185ca8957bd7"
+              LastKnownName="Boat"
+              LastKnownLocation="Package2_1502.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cd042380-a8da-4702-a3c8-97e464a684d0"
+                  name="MenuChoice"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="68a8d49f-4efb-4947-a027-e6e9c0b593d6"
+                  name="Boat"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="82215cb5-295d-4354-968e-9a93a21dfa70"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1fa6fe96-d448-4a77-9f29-d981e9dc3a7f"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b0086651-7ea0-4418-a36a-c8d9689eed56"
+            isDerived="false"
+            sourceEndRoleName="MenuChoice"
+            targetEndRoleName="Member"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cf3c2c0a-eb63-4910-92d4-cd26acf3346e"
+              LastKnownName="Member"
+              LastKnownLocation="Package2_1502.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b63b9aed-7ddf-4937-85cd-10f57cf24d4c"
+                  name="MenuChoice"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="87148747-7815-4fbd-b393-453af8cb658d"
+                  name="Member"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9e1a4b41-d02c-456a-8921-5320ee495a60"
+            isDerived="false"
+            sourceEndRoleName="MenuChoice"
+            targetEndRoleName="ClubData"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="02a60875-2f54-49a0-8f61-386a5b78688f"
+              LastKnownName="ClubData"
+              LastKnownLocation="Package2_1502.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="60c39c1e-b164-4a42-9acb-a0b7f65c9a81"
+                  name="MenuChoice"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b79e8448-2446-4f10-b7de-120e61c3100b"
+                  name="ClubData"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a737cd7b-5649-43f1-8ad8-fb63800c70b0"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6cf7874b-831d-4c66-ac42-ecce434428a3"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="73476871-10e1-409e-aece-f448cee87315"
+            name="GetMenuChoice"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d110abde-e5ae-4d1b-898c-7d8b879f99ec"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.Controller Type%3DMenuChoice Member%3DGetMenuChoice"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="205e8665-7053-4047-bba2-48629a129dab"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9940dd67-27a0-46f4-8b6e-068a6a674a2d">
+                    <propertyInstance
+                      Id="a338b3d2-bb72-4f5d-a5ac-840048c35eb3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="863c350c-d767-4e8b-a687-c6bb34c0897d">
+                    <propertyInstance
+                      Id="014f0db0-fc43-4605-8460-44a6299b426c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35c5442a-27d9-4965-9929-12753fa828f2">
+                    <propertyInstance
+                      Id="b002e1d7-a5d8-44f9-a7ed-c1a655e5c1f7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c21fb639-fce4-404a-8ba3-135c2e6216cf">
+                    <propertyInstance
+                      Id="fe1b066a-5c81-47b0-a7db-9eb5578c23a3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="790229f4-2001-40a2-871b-c3a26b7e054e">
+                    <propertyInstance
+                      Id="17fe216c-554b-4332-bed2-2d953c4494fe"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ee6548a-a872-4a32-a1c8-420fea8cbe99">
+                    <propertyInstance
+                      Id="4190eaad-9702-4abe-8e42-532899f672e3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="f4da0800-da21-40b7-8519-0f410cfe460c"
+            name="MenuChoice"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3abab9e7-e951-41ec-ab4d-4222197614ed"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.Controller Type%3DMenuChoice Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6570ef32-3de4-4b71-bd38-0bca62ab7c40"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41d78548-432c-4e75-9da4-3259812dee64">
+                    <propertyInstance
+                      Id="22a3205d-426b-4b70-a9bd-ba73d20f6c5b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5fdac6f-0634-4b78-8de6-d5bff41559f9">
+                    <propertyInstance
+                      Id="34de5876-4172-4664-ab28-6959509124c0"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f5b8026-104f-4c40-b9ea-a5019fd4087b">
+                    <propertyInstance
+                      Id="2f0b2106-6115-447c-beca-39ca144dee84"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b09624b-ecf0-4186-b7cc-7833944f8522">
+                    <propertyInstance
+                      Id="2b740ef5-d24d-4e34-9a2f-c569dc758ecf"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f183eac9-74ac-453a-913a-31a980a1115b">
+                    <propertyInstance
+                      Id="6f8b6ecf-d215-4e41-b4f7-f53a35df0743"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8001b225-8359-4b84-8545-4ca525c55ada">
+                    <propertyInstance
+                      Id="2c9aedbc-661e-42b2-b748-0f777d684c59"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

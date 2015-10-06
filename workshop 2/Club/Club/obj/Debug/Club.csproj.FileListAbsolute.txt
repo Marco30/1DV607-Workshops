@@ -1,0 +1,11 @@
+C:\Users\Marco\workshop 2\Club\Club\bin\Debug\Club.exe.config
+C:\Users\Marco\workshop 2\Club\Club\obj\Debug\Club.csprojResolveAssemblyReference.cache
+C:\Users\Marco\workshop 2\Club\Club\bin\Debug\Club.exe
+C:\Users\Marco\workshop 2\Club\Club\bin\Debug\Club.pdb
+C:\Users\Marco\workshop 2\Club\Club\obj\Debug\Club.exe
+C:\Users\Marco\workshop 2\Club\Club\obj\Debug\Club.pdb
+C:\Users\Mattias\Desktop\151006 test-master\workshop 2\Club\Club\bin\Debug\Club.exe.config
+C:\Users\Mattias\Desktop\151006 test-master\workshop 2\Club\Club\obj\Debug\Club.exe
+C:\Users\Mattias\Desktop\151006 test-master\workshop 2\Club\Club\obj\Debug\Club.pdb
+C:\Users\Mattias\Desktop\151006 test-master\workshop 2\Club\Club\bin\Debug\Club.exe
+C:\Users\Mattias\Desktop\151006 test-master\workshop 2\Club\Club\bin\Debug\Club.pdb

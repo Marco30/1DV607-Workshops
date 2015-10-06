@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="0194d49b-263d-4daf-a2b0-677d5355075b"
+  name="View"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="d2c2ffbb-777b-4064-90dc-437ab290cbf6"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DClub.View"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="080756a1-ef3a-47b9-ab7e-3d57bda75cd6">
+      <profileInstance
+        Id="8edbde4b-5b55-4794-9cdb-f71c104ecd35"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="b9c42a72-13fe-45c0-8cd4-41ff7e5fa10f"
+        name="ViewMessage"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fefbbf4d-ca9f-4d81-ad61-ad03c38e1968"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DViewMessage"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9c3920e2-8c7b-44d8-af6c-aa4145e7bea7"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="238d9415-136c-4a56-8ffa-eafb83f42e82">
+                <propertyInstance
+                  Id="f29c9bfc-aca8-4ecf-8eca-52d7fdd12ff3"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9f8511a9-df83-4961-969d-bb34e101970c">
+                <propertyInstance
+                  Id="e9691a9f-de94-4f14-9491-752146c5fe88"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="02d6372e-c7a3-4c4d-9a3f-c5dbc0ad61a4">
+                <propertyInstance
+                  Id="602c84df-bae0-4d9b-ab33-a88af1760513"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="34b3c408-f7b0-40a3-a2a7-5639cd6ea8a7">
+                <propertyInstance
+                  Id="ad6f2295-2091-4bb5-b572-383a572c0a0b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9e1763d6-5b55-4ce2-8755-9e27c3f2bd6e">
+                <propertyInstance
+                  Id="1922715c-ac91-4466-ad05-f8d62ca093a5"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c6dc8da1-1f83-42a1-975e-6ec6b3eec173"
+            name="ShowErrorMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f7467cdb-ab44-4655-a561-7350ffc60d25"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DViewMessage Member%3D(Name%3DShowErrorMessage OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2fc80589-7150-4d08-b69e-3b1161fec50d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="705114f2-5796-4332-96d2-eaeca27835cf">
+                    <propertyInstance
+                      Id="0b27d056-a3c3-4d9c-9335-34f10ddcc0b0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5298eaef-4006-4a44-969c-3f64af7c141d">
+                    <propertyInstance
+                      Id="a083cd02-544c-47d5-9acf-19b906181272"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b49f31f-9e86-4aa8-96ce-b21833715528">
+                    <propertyInstance
+                      Id="18e47d58-9da9-4b82-b26b-b4571cc76bb6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07720a63-15cd-4499-a9b6-e80991c4024f">
+                    <propertyInstance
+                      Id="cff0e423-3e51-4c14-90f1-14ec0db4e5f8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="053a76df-cad9-4ef2-b211-283a36ccfc06">
+                    <propertyInstance
+                      Id="ad278e28-d449-49cb-a6f7-2f935e295812"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2abc1a8-a305-4f6d-850e-66543c5e8e7c">
+                    <propertyInstance
+                      Id="0f699b83-d560-4336-bf1b-3c4286ff85af"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a858c82c-f790-437e-9fd7-c61fddb981a1"
+                  name="message"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7bdc6e87-3819-4332-b9ee-b0ab9efe4d6e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DViewMessage Member%3D(Name%3DShowErrorMessage OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3Dmessage"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f9df9c9f-54b5-4903-905a-1962299acc53"
+                  name="error"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="455c775b-d367-4974-a896-b683a61affbd"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DViewMessage Member%3D(Name%3DShowErrorMessage OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3Derror"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="646b763c-442e-40d8-a042-2142ea3e779c"
+            name="ShowMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="fb608dfd-114f-4c57-bbeb-97814ca2b31d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DViewMessage Member%3D(Name%3DShowMessage OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3c21c86a-786e-41ca-9ff3-4ea42b5bcd4a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bff23d1d-5183-4ced-b1f4-0df3c95d0b76">
+                    <propertyInstance
+                      Id="b9532383-1aad-4f68-8d42-18c78916627b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d6fc9ca-89cf-429d-ba85-baac3434eed4">
+                    <propertyInstance
+                      Id="df626503-049f-4c18-b259-b3e6014a75d7"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="871f03f0-f0b0-4134-af5f-87aad51eb8a1">
+                    <propertyInstance
+                      Id="25e6a753-f4c1-40ad-b1b2-b47bad27a1c3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f398a0a-0989-4926-88e8-c27713a70ca1">
+                    <propertyInstance
+                      Id="c2cac9e5-bbbb-4b9a-bd30-588810ac54f8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="29bc89cc-3f7a-4ff7-863d-1f39f9bab7e9">
+                    <propertyInstance
+                      Id="f05657ff-2d7a-4e80-b7f2-ea3e79bd0c68"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="792562e7-f6e9-4462-8ffb-bc47c6bee251">
+                    <propertyInstance
+                      Id="dbb798a3-db10-4f53-ba8a-2fbe91c32f16"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8f97d179-5bc6-46e7-a894-dc1c82b83386"
+                  name="message"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="dfab8bfa-9634-4433-b0a7-faaa0d756d22"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DViewMessage Member%3D(Name%3DShowMessage OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dmessage"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="fe85e490-4a5a-4fbd-afab-63e4ca912cfb"
+            name="ViewMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e5ec13b9-ee64-4052-9138-3d59769d15ea"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DViewMessage Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b679adcf-3b1c-4a46-852e-10ed42e40f31"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89aa1b1c-916b-4759-9fac-8d4638a6498c">
+                    <propertyInstance
+                      Id="ac54fd11-f31b-40c2-84eb-354c9a76960b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bb18b32-7c54-4e5e-8e65-b5dc5e3f31e4">
+                    <propertyInstance
+                      Id="f59168cd-813b-4229-a1c5-016764e16a90"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="58fefb90-89e0-4f4a-b5e9-e7836105296d">
+                    <propertyInstance
+                      Id="7139b8c6-9f54-4876-8636-2a86ebe7fd96"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="113e10f5-b639-48ed-816e-a999e002bf6c">
+                    <propertyInstance
+                      Id="f1b23bc9-428e-44f5-ac82-522fb64049a3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e63f4ad9-5e0c-4635-bcf1-4125cb9a5ded">
+                    <propertyInstance
+                      Id="f19e8aed-fce2-4e92-8ce9-968f3bf325f5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="36fe9a4e-1560-4e03-b8ba-a6a9acbc8a0c">
+                    <propertyInstance
+                      Id="3faa0789-eee8-483c-9fe7-fbe6abb7b35c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c0c2d84f-8fea-443c-9a35-a9e1b0faf00b"
+        name="MenuView"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="813d6f2e-4048-48d4-9230-85d938914702"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DMenuView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="21bfd7da-159a-4925-9ff3-d4ef9958d7d9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e5db9727-74fa-40c7-ae73-f4df94b03aa9">
+                <propertyInstance
+                  Id="e337f9c7-ec35-4dfa-9be5-8a8d3840049a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="057fdf8d-df24-47d1-ab7e-7f36f10e215c">
+                <propertyInstance
+                  Id="c6fd738b-4b14-4602-b07f-f8ffd357d2bf"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f76786df-e386-4481-a4e1-1d6af47da65b">
+                <propertyInstance
+                  Id="51b05235-f721-4e6c-aa6a-7d0751198bb7"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="28a0fc41-a9e9-4c9f-9d3b-46b28ffa112d">
+                <propertyInstance
+                  Id="b0699413-f8d1-4e22-9800-3cdf7dc8b0ca"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="55583efe-1cd9-4254-8bf4-0d4f5843bb51">
+                <propertyInstance
+                  Id="5f8f5041-3479-4706-8c3a-f7f7ab6eed7f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3a27fec8-d9ff-44b7-aef3-1b1d62c8a5ea"
+            name="ViewMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="55d7ff00-86c8-4ee6-aa25-67425c1705ce"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DMenuView Member%3DViewMenu"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c9b14ed8-7c30-4e75-9328-a7e78dde5ce2"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="983efafb-2fd4-4254-b9ad-58b4b3c7d52c">
+                    <propertyInstance
+                      Id="a6b7a1ec-3fb4-436b-8a72-60bb12206040"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4daacf50-9216-4c2c-aca9-0e51cf3f8540">
+                    <propertyInstance
+                      Id="5e89eed7-67d8-4ec6-a9eb-3d0331517176"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7274f0ae-61c2-4a00-821b-568cf39c40bf">
+                    <propertyInstance
+                      Id="1bcfba6a-ad6d-409f-8037-b8492c2f6ae3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b8eea00-8b42-465b-99d8-aec534713a91">
+                    <propertyInstance
+                      Id="f1266f00-0776-466f-b386-4e3026855e30"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="551aefd5-f515-49bf-93b5-0f9b34fa2115">
+                    <propertyInstance
+                      Id="e8035014-2927-4d96-a1a0-8b70edebe926"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3303ec0a-48ef-43b9-ab53-aef63c440b7c">
+                    <propertyInstance
+                      Id="8adc8df7-2eb5-4dff-b246-0763f05cd315"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="08c67a71-09af-416a-91a1-8ea8aa40280c"
+            name="MenuView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="05d2a13f-f298-488e-af16-657f33308640"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMarco%2Fworkshop 2%2FClub%2FClub%2Fbin%2FRelease%2FClub.exe&quot; Namespace%3DClub.View Type%3DMenuView Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="433be620-f46e-4e60-887f-890347856f05"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="087d9d79-5794-4694-82a6-054ab0a2a693">
+                    <propertyInstance
+                      Id="50926cf1-857e-4f88-b888-a919196131cd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54b071dc-245d-41b0-9d38-86543dc36cda">
+                    <propertyInstance
+                      Id="b8cfc580-a030-47c9-8822-82c31c34ff5e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d14395c6-9dac-4449-8f8f-e546e6f8f218">
+                    <propertyInstance
+                      Id="96a925ed-1f2c-4fae-80da-3cb46a19fc21"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a919eec-5309-4d64-8038-8158bacf739c">
+                    <propertyInstance
+                      Id="930bbc86-50d6-4065-84d2-40d98d3ecf0a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8bff8e3-f5f9-4767-b56f-36a407a6eb09">
+                    <propertyInstance
+                      Id="70ce81ef-6697-42a9-8bc1-83dacb07c175"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3925d8e2-2e53-4051-a8ba-0e2fb08ce7b3">
+                    <propertyInstance
+                      Id="eb9d6167-a16e-4610-bfe9-17902ce71c7b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
