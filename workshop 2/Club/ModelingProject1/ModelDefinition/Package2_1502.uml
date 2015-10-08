@@ -803,86 +803,22 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <targetEnds>
-          <association
-            Id="72d06c99-9668-4eba-83ff-acfb93978d68"
-            isDerived="false"
-            sourceEndRoleName="ClubData"
-            targetEndRoleName="Member"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="cf3c2c0a-eb63-4910-92d4-cd26acf3346e"
-              LastKnownName="Member"
-              LastKnownLocation="Package2_1502.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="47984bfb-b149-412b-b0c8-3e10be9f0bf4"
-                  name="ClubData"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="c05bc38f-f6cf-4c05-bbd5-25c01746d6fd"
-                  name="Member"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="7207d13f-52a3-4376-8690-55cedfa694f3"
-            isDerived="false"
-            sourceEndRoleName="ClubData"
-            targetEndRoleName="Boat"
-            isLeaf="false"
-            isAbstract="false">
+        <suppliersInternal>
+          <dependency
+            Id="3153a884-33d8-4a70-adf9-1fc91e070130">
             <classMoniker
               Id="36b693ed-d292-4811-a47a-185ca8957bd7"
               LastKnownName="Boat"
               LastKnownLocation="Package2_1502.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8c377b57-6593-4fc4-9d59-6a74b5468c10"
-                  name="ClubData"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="c3c47d31-0238-4f87-b8c3-7d7b7a6cbdc9"
-                  name="Boat"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
+          </dependency>
+          <dependency
+            Id="0527e8e3-3a48-43ae-a0e2-44ab17cd14cf">
+            <classMoniker
+              Id="cf3c2c0a-eb63-4910-92d4-cd26acf3346e"
+              LastKnownName="Member"
+              LastKnownLocation="Package2_1502.uml" />
+          </dependency>
+        </suppliersInternal>
         <ownedAttributesInternal>
           <property
             Id="d89a71b5-8fb0-4f4f-8dd0-0e6a7e506eaa"

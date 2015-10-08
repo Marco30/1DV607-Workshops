@@ -76,242 +76,43 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <targetEnds>
-          <association
-            Id="e53e13e6-d20b-4a1b-a0e3-eb000554da8b"
-            isDerived="false"
-            sourceEndRoleName="MenuChoice"
-            targetEndRoleName="ViewMessage"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="b9c42a72-13fe-45c0-8cd4-41ff7e5fa10f"
-              LastKnownName="ViewMessage"
-              LastKnownLocation="Package_1503.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="feb517e1-fc7e-4af1-9e80-cbc3a9c2480f"
-                  name="MenuChoice"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="241bb879-0344-4172-a229-1a47de819c41"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="62bc7849-9835-4248-ae33-f714a1272ed5"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="cde997c4-5ef6-46f8-998e-ec509403c20d"
-                  name="ViewMessage"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="004702cc-c8b0-4dad-b024-406ebc7f168e"
-            isDerived="false"
-            sourceEndRoleName="MenuChoice"
-            targetEndRoleName="MenuView"
-            isLeaf="false"
-            isAbstract="false">
+        <suppliersInternal>
+          <dependency
+            Id="66177a74-cefe-4089-ad59-36f70476931c">
             <classMoniker
               Id="c0c2d84f-8fea-443c-9a35-a9e1b0faf00b"
               LastKnownName="MenuView"
               LastKnownLocation="Package_1503.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="46260e5a-cbb2-41d7-bde7-b2d16bc5e963"
-                  name="MenuChoice"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1d47d39c-4b0c-4d96-988a-b88cd761c35c"
-                  name="MenuView"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="ecbaceee-030b-4a73-ae61-2212b3e2e237"
-            isDerived="false"
-            sourceEndRoleName="MenuChoice"
-            targetEndRoleName="Boat"
-            isLeaf="false"
-            isAbstract="false">
+          </dependency>
+          <dependency
+            Id="97371bf5-005a-4ab9-baa2-8413483c69c3">
             <classMoniker
-              Id="36b693ed-d292-4811-a47a-185ca8957bd7"
-              LastKnownName="Boat"
-              LastKnownLocation="Package2_1502.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="cd042380-a8da-4702-a3c8-97e464a684d0"
-                  name="MenuChoice"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="68a8d49f-4efb-4947-a027-e6e9c0b593d6"
-                  name="Boat"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="82215cb5-295d-4354-968e-9a93a21dfa70"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="1fa6fe96-d448-4a77-9f29-d981e9dc3a7f"
-                      name="Upper"
-                      value="1" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="b0086651-7ea0-4418-a36a-c8d9689eed56"
-            isDerived="false"
-            sourceEndRoleName="MenuChoice"
-            targetEndRoleName="Member"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="cf3c2c0a-eb63-4910-92d4-cd26acf3346e"
-              LastKnownName="Member"
-              LastKnownLocation="Package2_1502.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="b63b9aed-7ddf-4937-85cd-10f57cf24d4c"
-                  name="MenuChoice"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="87148747-7815-4fbd-b393-453af8cb658d"
-                  name="Member"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="9e1a4b41-d02c-456a-8921-5320ee495a60"
-            isDerived="false"
-            sourceEndRoleName="MenuChoice"
-            targetEndRoleName="ClubData"
-            isLeaf="false"
-            isAbstract="false">
+              Id="b9c42a72-13fe-45c0-8cd4-41ff7e5fa10f"
+              LastKnownName="ViewMessage"
+              LastKnownLocation="Package_1503.uml" />
+          </dependency>
+          <dependency
+            Id="5de27752-4347-4ba3-8f46-72ee1dc2a9dd">
             <classMoniker
               Id="02a60875-2f54-49a0-8f61-386a5b78688f"
               LastKnownName="ClubData"
               LastKnownLocation="Package2_1502.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="60c39c1e-b164-4a42-9acb-a0b7f65c9a81"
-                  name="MenuChoice"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="b79e8448-2446-4f10-b7de-120e61c3100b"
-                  name="ClubData"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="a737cd7b-5649-43f1-8ad8-fb63800c70b0"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="6cf7874b-831d-4c66-ac42-ecce434428a3"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
+          </dependency>
+          <dependency
+            Id="874d143b-fcd7-49d0-86c3-792a088d2b29">
+            <classMoniker
+              Id="cf3c2c0a-eb63-4910-92d4-cd26acf3346e"
+              LastKnownName="Member"
+              LastKnownLocation="Package2_1502.uml" />
+          </dependency>
+          <dependency
+            Id="61fb5d3d-06ea-4059-beaa-e162fde95587">
+            <classMoniker
+              Id="36b693ed-d292-4811-a47a-185ca8957bd7"
+              LastKnownName="Boat"
+              LastKnownLocation="Package2_1502.uml" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperationsInternal>
           <operation
             Id="73476871-10e1-409e-aece-f448cee87315"
