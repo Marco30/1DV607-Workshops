@@ -215,6 +215,7 @@ namespace Club.View
             }
         }
 
+
         public void ListAllMembersWithBoat()
         {
             Member[] membersList = this.membCatalog.GetMembers();
@@ -229,7 +230,8 @@ namespace Club.View
             else
             {
 
-                List<int> termsList = new List<int>();
+                List<int> termsList1 = new List<int>();
+                List<int> termsList2 = new List<int>();
 
                 bool lika = false;
 
@@ -237,40 +239,48 @@ namespace Club.View
                 {
                     if (boatsList[i] != null)
                     {
-                        
-                        for (int M = 0; M < membersList.Length; M++)
-                        {
-                           
-
-                          
-                                if (membersList[M] != null)
-                                {
-                                
-                                    if (boatsList[i].OwnedBy == membersList[M].MemberNumber)
-                                    {
-                                        foreach (int number in termsList)
-                                        {
-                                            if (number == boatsList[i].OwnedBy) // Will match once.
-                                            {
-                                                lika = true;
-                                            }
-                                        }
-
-                                       
-                                        if(lika == false )
-                                        {
-                                            ShowMessage(membersList[M].PrintListInfo());
-                                                                        
-                                        }
-                                    
-                                        termsList.Add(boatsList[i].OwnedBy);   
-
-                                    }                           
-                                }
-                            
-                        }
+                        termsList1.Add(boatsList[i].OwnedBy);
                     }
                 }
+
+                foreach (int number in termsList1)
+                {
+                    if (!termsList2.Contains(number))
+                    {
+                        termsList2.Add(number);
+                    }
+                }
+
+
+           
+                        for (int M = 0; M < membersList.Length; M++)
+                        {
+
+
+                            if (membersList[M] != null)
+                            {
+
+
+                                    foreach (int number in termsList2)
+                                    {
+                                        if (number == membersList[M].MemberNumber) // Will match once.
+                                        {
+                                            lika = true;
+                                        }
+                                    }
+
+                                    if (lika == true)
+                                    {
+                                        ShowMessage(membersList[M].PrintListInfo());          
+                                    }
+
+                                    lika = false;
+
+                            }
+
+                        }
+                    
+                
             }
         }
 
