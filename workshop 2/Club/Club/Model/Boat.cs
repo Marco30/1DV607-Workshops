@@ -76,5 +76,8 @@ namespace Club.Model
             return String.Format("\n1. Ägare:\t{0}\n2. Typ:\t\t{1}\n3. Längd:\t{2}", _ownedBy, GetBoatType(), _length);
         }
 
+    
+
+
     }
 }

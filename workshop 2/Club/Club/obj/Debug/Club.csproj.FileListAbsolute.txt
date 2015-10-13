@@ -17,3 +17,6 @@ C:\Users\Mattias\Desktop\Linnéuniversitetet\Objektorienterad analys och design 
 C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\bin\Debug\Club.exe.config
 C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\obj\Debug\Club.exe
 C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\obj\Debug\Club.pdb
+C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\bin\Debug\Club.exe
+C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\bin\Debug\Club.pdb
+C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\obj\Debug\Club.csprojResolveAssemblyReference.cache

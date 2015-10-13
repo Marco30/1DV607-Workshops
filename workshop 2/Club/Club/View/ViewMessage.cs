@@ -206,9 +206,69 @@ namespace Club.View
             {
                 for (int i = 0; i < membersList.Length; i++)
                 {
+                    
                     if (membersList[i] != null)
                     {
                         ShowMessage(membersList[i].PrintListInfo());
+                    }
+                }
+            }
+        }
+
+        public void ListAllMembersWithBoat()
+        {
+            Member[] membersList = this.membCatalog.GetMembers();
+            Boat[] boatsList = this.boatCatalog.GetBoats();
+
+
+
+            if (this.membCatalog.CountMembers() == 0)
+            {
+                ShowErrorMessage("Inga medlemmar registrerade.", true);
+            }
+            else
+            {
+
+                List<int> termsList = new List<int>();
+
+                bool lika = false;
+
+                for (int i = 0; i < boatsList.Length; i++)
+                {
+                    if (boatsList[i] != null)
+                    {
+                        
+                        for (int M = 0; M < membersList.Length; M++)
+                        {
+                           
+
+                          
+                                if (membersList[M] != null)
+                                {
+                                
+                                    if (boatsList[i].OwnedBy == membersList[M].MemberNumber)
+                                    {
+                                        foreach (int number in termsList)
+                                        {
+                                            if (number == boatsList[i].OwnedBy) // Will match once.
+                                            {
+                                                lika = true;
+                                            }
+                                        }
+
+                                       
+                                        if(lika == false )
+                                        {
+                                            ShowMessage(membersList[M].PrintListInfo());
+                                                                        
+                                        }
+                                    
+                                        termsList.Add(boatsList[i].OwnedBy);   
+
+                                    }                           
+                                }
+                            
+                        }
                     }
                 }
             }
@@ -399,7 +459,8 @@ namespace Club.View
         {
             ClearConsole();
             ShowMessage(String.Format("[ {0} ]\n", title));
-            ListAllMembers();
+            //ListAllMembers();
+            ListAllMembersWithBoat();
             ShowMessage("\nVälj en medlem genom att skriva in ett medlemsnummer (numret inuti parentesen).");
 
             return ChooseMember();
@@ -422,7 +483,7 @@ namespace Club.View
                 }
             }
 
-            ShowMessage("\nVälj i listan vilken båt som skall raderas.");
+            ShowMessage("\nVälj i listan vilken båt som skall redigeras.");
 
             bool validNumber = false;
             int number;
