@@ -8,19 +8,18 @@ namespace Club.Model
 {
     class Boat
     {
-
         private int _type;
         private int _length;
         private int _ownedBy;
 
-        public Boat()// constructor
+        public Boat(int type, int length, int ownedBy)
         {
-            this._length = 0;
-            this._type = 0;
-            this._ownedBy = 0;
+            this._length = length;
+            this._type = type;
+            this._ownedBy = ownedBy;
         }
 
-        public int Type// funktion som används för att till dela typ och hämta ut typ
+        public int Type
         {
             get { return _type; }
             set
@@ -47,77 +46,35 @@ namespace Club.Model
             }
         }
 
-   
-        public string BoatToString()//funktion omvandlar this_type till text och skapar en string med all båt information
+        public string GetBoatType()
         {
-            string returnString;
-            string type = "";
-
             if (this._type == 1)
             {
-                type = "Motorbåt";
+                return "Motorbåt";
             }
-
+            
             if (this._type == 2)
             {
-                type = "Segelbåt";
+                return "Segelbåt";
             }
-
+            
             if (this._type == 3)
             {
-                type = "Roddbåt";
+                return "Roddbåt";
             }
-
+            
             if (this._type == 4)
             {
-                type = "Kanot";
+                return "Kanot";
             }
-
-            if (this._type == 5)
-            {
-                type = "Övrigt";
-            }
-
-            returnString = String.Format("\nBåttyp:\t\t{0}\nLängd:\t\t{1}", type, _length);
-
-            return returnString;
+            
+            return "Övrigt";
         }
 
-        public string BoatToStringFull()//funktion omvandlar this_type till text och skapar en string med all båt information
+        public string PrintFullWithNumberList()
         {
-            string returnString;
-            string type = "";
-
-            if (this._type == 1)
-            {
-                type = "Motorbåt";
-            }
-
-            if (this._type == 2)
-            {
-                type = "Segelbåt";
-            }
-
-            if (this._type == 3)
-            {
-                type = "Roddbåt";
-            }
-
-            if (this._type == 4)
-            {
-                type = "Kanot";
-            }
-
-            if (this._type == 5)
-            {
-                type = "Övrigt";
-            }
-
-            returnString = String.Format("\nBåttyp:\t\t{0}\nLängd:\t\t{1}\nÄgare:\t\t{2}", type, _length, _ownedBy);
-
-            return returnString;
+            return String.Format("\n1. Ägare:\t{0}\n2. Typ:\t\t{1}\n3. Längd:\t{2}", _ownedBy, GetBoatType(), _length);
         }
-
 
     }
 }

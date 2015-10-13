@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
-  Id="50d058e9-23f3-4508-99dc-589a5c8e2055"
-  name="ModelingProject1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  Id="a1cdea76-5779-436c-bdd6-6ca9b4f34a98"
+  name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -17,18 +17,26 @@
         name="StandardProfileL3" />
     </packageHasProfileInstances>
     <packageHasProfileInstances
-      Id="725337e0-8175-40cf-a43b-1d7ef57cda6c">
+      Id="71017c0a-6a82-42d9-af28-4704c2eb76ea">
       <profileInstance
-        Id="68ae4f76-9cff-4487-908e-aa40bf8c95dd"
+        Id="31dcd691-1ec5-4a5d-a792-a4b90da2d9a7"
         name="CSharpProfile" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
       <packageMoniker
-        Id="ec4637c7-5eed-4d8b-90f8-9c1a39eebfa2"
+        Id="bcc5f91a-e505-4bd0-a6e7-027b7cacf72f"
         LastKnownName="Club"
-        LastKnownLocation="Package_1502.uml" />
+        LastKnownLocation="Package_2205.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="91d245cf-3c05-4672-b13f-c78e39fe7e6a"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

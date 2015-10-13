@@ -12,47 +12,33 @@ namespace Club.Controller
     {
         public void GetMenuChoice()
         {
-            // Skapa View och Controller.
-            ViewMessage V = new ViewMessage();
-            ClubData Handler = new ClubData();
-            MenuView menu = new MenuView();
-
-            // Deklarerar arrayer för medlemmar och båtar (100 platser var).
-            Member[] members = new Member[100];
-            Boat[] boats = new Boat[100];
+            // Skapar Views och Models.
+            MenuView startMenu = new MenuView();
+            MemberCatalog membCatalog = new MemberCatalog();
+            BoatCatalog boatCatalog = new BoatCatalog();
+            ViewMessage v = new ViewMessage(membCatalog, boatCatalog);
 
             // Läser in båtar och medlemmar från textfiler.
-            boats = Handler.readBoats(boats);
-            members = Handler.readMembers(members);
-
-            // Räknar ihop antal medlemmar och båtar.
-            int arrayPosition = members.Count(s => s != null);
-            int boatsPosition = boats.Count(z => z != null);
+            boatCatalog.AddFullCatalog();
+            membCatalog.AddFullCatalog();
 
             // Deklaration av variabel som kommer innehålla valet man gjort i menyn.
-            int choice = 12;
+            int? choice = null;
 
             do
             {
                 // Kör funktionen som visar menyn.
-                menu.ViewMenu(); 
+                startMenu.ViewMenu();
 
-                try
+                int inputChoice;
+                bool inputResult = int.TryParse(v.ReadInput(), out inputChoice);
+                
+                if (inputResult)
                 {
-                    // Läser in menyval.
-                    choice = int.Parse(Console.ReadLine());
-
-                    // Kontrollerar att man gjort ett val i menyn som är mellan 0-8, om man gjort det så kommer inga felmeddelanden att visas.
-                    if (choice < 0 && choice > 8)
-                    {
-                        V.ShowErrorMessage("FEL! Ange ett nummer mellan 0 och 8", true);
-                    }
-                }
-                catch
-                {
-                    V.ShowErrorMessage("FEL! Ange ett nummer mellan 0 och 8", true);
+                    choice = inputChoice;
                 }
 
+                // Väljer case utifrån användarens input (0-8).
                 switch (choice)
                 {
                     case 0:
@@ -60,110 +46,101 @@ namespace Club.Controller
 
                     case 1: // Skapar ny medlem.
 
-                        members[arrayPosition] = Handler.AddMember();// kallar på funktionen som lägger till medlem     
-                        arrayPosition++;
+                        string[] regArr = v.RegisterMember();
+                        membCatalog.CreateNewMember(regArr);
+                        v.RegisteredMemberResponse();
                         break;
 
                     case 2: // Presenterar lista med medlemmar.
 
-                        Handler.MembersList(members, arrayPosition, boats, boatsPosition);// kallar på funktionen som listar medlemar 
+                        v.ViewMembersList();
                         break;
 
                     case 3: // Presenterar detaljerad information om en medlem.
 
-                        // Presenterar felmeddelande om inga medlemmar finns registrerade.
-                        if (arrayPosition == 0)
-                        {
-                            V.ShowErrorMessage("Inga medlemmar finns ännu", true);
-                            break;
-                        }
-
-                        // Hämtar medlemmens position i arrayen.
-                        V.ShowErrorMessage("Vilken medlem vill du ha information om?", false);
-                        int whatMember = Handler.GetMemberNumber();
-
-                        // Om en korrekt medlem är vald, presenteras info om medlemmen.
-                        if (whatMember > 0 && (whatMember <= arrayPosition))
-                        {
-                            Handler.GetMemberData(members, whatMember);
-                        }
+                        v.ViewOneMember();
                         break;
 
                     case 4: // Ändrar en medlem.
 
-                        // Hämtar medlemmens position i arrayen.
-                        V.ShowErrorMessage("Vilken medlem vill du redigera?", false);
-                        int whichMember = Handler.GetMemberNumber();
+                        string[] editArray = v.ViewEditMember();
 
-                        // Om en korrekt medlem är vald, presenteras info om medlemmen.
-                        if (whichMember > 0 && (whichMember <= arrayPosition))
+                        if (int.Parse(editArray[1]) == 1)
                         {
-                            Handler.EditMemberData(members, whichMember);
+                            membCatalog.GetMemberByMemberNumber(int.Parse(editArray[0])).FirstName = editArray[2];
+                        }
+                        else if (int.Parse(editArray[1]) == 2)
+                        {
+                            membCatalog.GetMemberByMemberNumber(int.Parse(editArray[0])).LastName = editArray[2];
+                        }
+                        else if (int.Parse(editArray[1]) == 3)
+                        {
+                            membCatalog.GetMemberByMemberNumber(int.Parse(editArray[0])).SocialSecurityNumber = int.Parse(editArray[2]);
+                        }
+                        else
+                        {
+                            if (!membCatalog.IsMemberNumberCorrect(int.Parse(editArray[2])))
+                            {
+                                membCatalog.GetMemberByMemberNumber(int.Parse(editArray[0])).MemberNumber = int.Parse(editArray[2]);
+                                boatCatalog.EditBoatsMemberNumber(int.Parse(editArray[0]), int.Parse(editArray[2]));
+                            }
+                            else
+                            {
+                                v.MemberNumberIsTakenResponse();
+                            }
                         }
                         break;
 
                     case 5: // Ta bort en medlem.
 
-                        // Hämtar medlemmens position i arrayen.
-                        V.ShowErrorMessage("Vilken medlem vill du radera?", false);
-                        int whoMember = Handler.GetMemberNumber();
-
-                        // Om en korrekt medlem är vald, raderas medlemmen.
-                        if (whoMember > 0 && (whoMember <= arrayPosition))
-                        {
-                            members = Handler.DeleteMember(members, whoMember);
-                            arrayPosition--;
-                        }
+                        int memberToDelete = v.ViewDeleteMember();
+                        membCatalog.DeleteMemberByMemberNumber(memberToDelete);
+                        boatCatalog.DeleteBoats(memberToDelete);
+                        v.ResponseMessage("RADERA MEDLEM", "Medlem raderad");
                         break;
 
                     case 6: // Lägger till en båt.
 
-                        boats[boatsPosition] = Handler.AddBoat(members, arrayPosition);
-                        boatsPosition++;
+                        int memberToAddBoatTo = v.ViewAddBoatByMember();
+                        int[] regArray = v.RegisterBoat();
+
+                        boatCatalog.AddBoat(regArray[1], regArray[0], memberToAddBoatTo);
+                        v.ResponseMessage("REGISTRERA BÅT", "Båt registrerad");
+
                         break;
 
                     case 7: // Tar bort en båt.
 
-                        V.ShowErrorMessage("Vilken båt vill du radera?", false);
-
-                        int[] memberAndBoatDelete = Handler.GetBoatNumberAndMemberNumber(members, arrayPosition, boats, boatsPosition);        // Hittar rätt nummer
-
-                        if (memberAndBoatDelete[0] != -1)
-                        {
-                            int whatOwner = memberAndBoatDelete[0];
-                            int whatBoatOfOwner = memberAndBoatDelete[1];
-                            int whatBoatOfOwnerInArray = Handler.readBoatsPosByMember(members, whatOwner, boats, whatBoatOfOwner);
-
-                            // Om en korrekt båt är vald, raderas båten.
-                            if (whatBoatOfOwnerInArray > 0 && (whatBoatOfOwnerInArray <= boatsPosition))
-                            {
-                                boats = Handler.DeleteBoat(boats, whatBoatOfOwnerInArray);
-                                boatsPosition--;
-                            }
-                            
-                        }
+                        int memberToRemoveBoatTo = v.ViewDeleteBoatByMember("RADERA BÅT");
+                        int boatToRemove = v.ListAllBoatsByMember(memberToRemoveBoatTo, "RADERA BÅT");
+                        boatCatalog.DeleteBoat(memberToRemoveBoatTo, boatToRemove);
+                        v.ResponseMessage("RADERA BÅT", "Båt raderad");
                         break;
                         
 
                     case 8: // Redigerar en båt.
-                        V.ShowErrorMessage("Vilken båt vill du redigera?", false);
-                        int[] memberAndBoat = Handler.GetBoatNumberAndMemberNumber(members, arrayPosition, boats, boatsPosition);
-                        int memberNumber = memberAndBoat[0];
-                        int whichBoat = memberAndBoat[1];
+                        int memberToEditBoatTo = v.ViewDeleteBoatByMember("REDIGERA BÅT");
+                        int boatToEdit = v.ListAllBoatsByMember(memberToEditBoatTo, "REDIGERA BÅT");
+                        int[] boatEditInfo = v.ViewEditBoat(memberToEditBoatTo, boatToEdit);
 
-                        // Om en korrekt båt är vald, tillåts användaren ändra båten.
-                        if (whichBoat >= 0 && (whichBoat <= arrayPosition))
+                        if (boatEditInfo[0] == 1 && !membCatalog.IsMemberNumberCorrect(boatEditInfo[1]))
                         {
-                            int boatPos = Handler.readBoatsPosByMember(members, memberNumber, boats, whichBoat);
-                            Handler.EditBoatData(boats, boatPos);
+                            v.MemberNumberDoesNotExistResponse();
+                        }
+                        else
+                        {
+                            boatCatalog.EditBoat(boatEditInfo, memberToEditBoatTo, boatToEdit);
+                            v.ResponseMessage("REDIGERA BÅT", "Båt redigerad");
                         }
                         break;
                 }
+
+                v.ClearConsole();
             } while (choice != 0);
                
             // Sparar förändringar.
-            Handler.saveMembers(members, arrayPosition);
-            Handler.saveBoats(boats, boatsPosition);
+            membCatalog.SaveCatalog();
+            boatCatalog.SaveCatalog();
         }
     }
 }

@@ -10,11 +10,9 @@ namespace Club.View
 {
     class MenuView
     {
-
-
-        public void ViewMenu()      //fukntion som skriver utt meny
+        // Presenterar lista med menyalternativ.
+        public void ViewMenu()
         {
-           
             Console.WriteLine("--------------------------------------");
             Console.WriteLine("-             Båtklubb               -");
             Console.WriteLine("--------------------------------------\n");
@@ -30,7 +28,5 @@ namespace Club.View
             Console.WriteLine("-------------------------------------\n");
             Console.WriteLine("\nFyll i menyval 0-8:");
         }
-
-
     }
 }
