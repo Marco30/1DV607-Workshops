@@ -87,29 +87,5 @@ namespace Club.Model
 
             this._memberNumber = randomNumber;
         }
-
-        // Skapar en sträng med fullständig information om medlemmen.
-        public string PrintFull()
-        {
-            return String.Format("\nNamn:\t\t{0}\nEfternamn:\t{1}\nPersonnummer:\t{2}\nMedlemsnummer:\t{3}", _firstName, _lastName, _socialSecurityNumber, _memberNumber);
-        }
-
-        // Skapar en numrerad sträng med fullständig information om medlemmen.
-        public string PrintFullWithNumberList()
-        {
-            return String.Format("\n1. Namn:\t\t{0}\n2. Efternamn:\t\t{1}\n3. Personnummer:\t{2}\n4. Medlemsnummer:\t{3}", _firstName, _lastName, _socialSecurityNumber, _memberNumber);
-        }
-
-        // Skapar en sträng med kompakt information om medlemmen.
-        public string PrintCompact()
-        {
-            return String.Format("\nNamn:\t\t{0}\nEfternamn:\t{1}\nMedlemsnummer\t{2}", _firstName, _lastName, _memberNumber);
-        }
-
-        // Skapar en sträng med medlemsinformation.
-        public string PrintListInfo()
-        {
-            return String.Format("{0} {1} ({2})", _firstName, _lastName, _memberNumber);
-        }
     }
 }

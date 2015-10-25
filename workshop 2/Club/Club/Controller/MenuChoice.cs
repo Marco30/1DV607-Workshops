@@ -12,15 +12,13 @@ namespace Club.Controller
     {
         public void GetMenuChoice()
         {
-            // Skapar Views och Models.
+            // Skapar Views och Models. Läser in från textfiler.
             MenuView startMenu = new MenuView();
             MemberCatalog membCatalog = new MemberCatalog();
-            BoatCatalog boatCatalog = new BoatCatalog();
-            ViewMessage v = new ViewMessage(membCatalog, boatCatalog);
-
-            // Läser in båtar och medlemmar från textfiler.
-            boatCatalog.AddFullCatalog();
             membCatalog.AddFullCatalog();
+            BoatCatalog boatCatalog = new BoatCatalog(membCatalog);
+            boatCatalog.AddFullCatalog();
+            ViewMessage v = new ViewMessage(membCatalog, boatCatalog);
 
             // Deklaration av variabel som kommer innehålla valet man gjort i menyn.
             int? choice = null;
@@ -63,26 +61,26 @@ namespace Club.Controller
 
                     case 4: // Ändrar en medlem.
 
-                        string[] editArray = v.ViewEditMember();
+                        object[] editArray = v.ViewEditMember();
 
-                        if (int.Parse(editArray[1]) == 1)
+                        if ((int)editArray[1] == 1)
                         {
-                            membCatalog.GetMemberByMemberNumber(int.Parse(editArray[0])).FirstName = editArray[2];
+                            membCatalog.GetMemberByMemberNumber((int)editArray[0]).FirstName = editArray[2].ToString();
                         }
-                        else if (int.Parse(editArray[1]) == 2)
+                        else if ((int)editArray[1] == 2)
                         {
-                            membCatalog.GetMemberByMemberNumber(int.Parse(editArray[0])).LastName = editArray[2];
+                            membCatalog.GetMemberByMemberNumber((int)editArray[0]).LastName = editArray[2].ToString();
                         }
-                        else if (int.Parse(editArray[1]) == 3)
+                        else if ((int)editArray[1] == 3)
                         {
-                            membCatalog.GetMemberByMemberNumber(int.Parse(editArray[0])).SocialSecurityNumber = int.Parse(editArray[2]);
+                            membCatalog.GetMemberByMemberNumber((int)editArray[0]).SocialSecurityNumber = (int)editArray[2];
                         }
                         else
                         {
-                            if (!membCatalog.IsMemberNumberCorrect(int.Parse(editArray[2])))
+                            if (!membCatalog.IsMemberNumbCorrect((int)editArray[2]))
                             {
-                                membCatalog.GetMemberByMemberNumber(int.Parse(editArray[0])).MemberNumber = int.Parse(editArray[2]);
-                                boatCatalog.EditBoatsMemberNumber(int.Parse(editArray[0]), int.Parse(editArray[2]));
+                                membCatalog.GetMemberByMemberNumber((int)editArray[0]).MemberNumber = (int)editArray[2];
+                                boatCatalog.EditBoatsMemberNumber(membCatalog.GetMemberByMemberNumber((int)editArray[0]), (int)editArray[2]);
                             }
                             else
                             {
@@ -93,25 +91,24 @@ namespace Club.Controller
 
                     case 5: // Ta bort en medlem.
 
-                        int memberToDelete = v.ViewDeleteMember();
-                        membCatalog.DeleteMemberByMemberNumber(memberToDelete);
+                        Member memberToDelete = membCatalog.GetMemberByMemberNumber(v.ViewDeleteMember());
+                        membCatalog.DeleteMember(memberToDelete);
                         boatCatalog.DeleteBoats(memberToDelete);
                         v.ResponseMessage("RADERA MEDLEM", "Medlem raderad");
                         break;
 
                     case 6: // Lägger till en båt.
 
-                        int memberToAddBoatTo = v.ViewAddBoatByMember();
+                        Member memb = membCatalog.GetMemberByMemberNumber(v.ViewAddBoatByMember());
                         int[] regArray = v.RegisterBoat();
-
-                        boatCatalog.AddBoat(regArray[1], regArray[0], memberToAddBoatTo);
+                        boatCatalog.AddBoat(regArray[1], regArray[0], memb);
                         v.ResponseMessage("REGISTRERA BÅT", "Båt registrerad");
 
                         break;
 
                     case 7: // Tar bort en båt.
 
-                        int memberToRemoveBoatTo = v.ViewDeleteBoatByMember("RADERA BÅT");
+                        Member memberToRemoveBoatTo = membCatalog.GetMemberByMemberNumber(v.ViewDeleteBoatByMember("RADERA BÅT"));
                         int boatToRemove = v.ListAllBoatsByMember(memberToRemoveBoatTo, "RADERA BÅT");
                         boatCatalog.DeleteBoat(memberToRemoveBoatTo, boatToRemove);
                         v.ResponseMessage("RADERA BÅT", "Båt raderad");
@@ -119,11 +116,14 @@ namespace Club.Controller
                         
 
                     case 8: // Redigerar en båt.
-                        int memberToEditBoatTo = v.ViewDeleteBoatByMember("REDIGERA BÅT");
+                        // Hämta memb att redigera ifrån
+                        Member memberToEditBoatTo = membCatalog.GetMemberByMemberNumber(v.ViewDeleteBoatByMember("REDIGERA BÅT"));
+                        // Lista båtindex.
                         int boatToEdit = v.ListAllBoatsByMember(memberToEditBoatTo, "REDIGERA BÅT");
-                        int[] boatEditInfo = v.ViewEditBoat(memberToEditBoatTo, boatToEdit);
 
-                        if (boatEditInfo[0] == 1 && !membCatalog.IsMemberNumberCorrect(boatEditInfo[1]))
+                        object[] boatEditInfo = v.ViewEditBoat(memberToEditBoatTo, boatToEdit);
+
+                        if ((int)boatEditInfo[0] == 1 && !membCatalog.IsMemberNumbCorrect((int)boatEditInfo[1]))
                         {
                             v.MemberNumberDoesNotExistResponse();
                         }

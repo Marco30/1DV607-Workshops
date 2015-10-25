@@ -10,9 +10,9 @@ namespace Club.Model
     {
         private int _type;
         private int _length;
-        private int _ownedBy;
+        private Member _ownedBy;
 
-        public Boat(int type, int length, int ownedBy)
+        public Boat(int type, int length, Member ownedBy)
         {
             this._length = length;
             this._type = type;
@@ -37,7 +37,7 @@ namespace Club.Model
             }
         }
 
-        public int OwnedBy
+        public Member OwnedBy
         {
             get { return _ownedBy; }
             set
@@ -45,39 +45,5 @@ namespace Club.Model
                 _ownedBy = value;
             }
         }
-
-        public string GetBoatType()
-        {
-            if (this._type == 1)
-            {
-                return "Motorbåt";
-            }
-            
-            if (this._type == 2)
-            {
-                return "Segelbåt";
-            }
-            
-            if (this._type == 3)
-            {
-                return "Roddbåt";
-            }
-            
-            if (this._type == 4)
-            {
-                return "Kanot";
-            }
-            
-            return "Övrigt";
-        }
-
-        public string PrintFullWithNumberList()
-        {
-            return String.Format("\n1. Ägare:\t{0}\n2. Typ:\t\t{1}\n3. Längd:\t{2}", _ownedBy, GetBoatType(), _length);
-        }
-
-    
-
-
     }
 }

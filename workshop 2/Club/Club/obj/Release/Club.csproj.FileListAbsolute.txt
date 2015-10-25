@@ -10,9 +10,3 @@ C:\Users\Mattias\Desktop\151006 test-master\workshop 2\Club\Club\obj\Release\Clu
 C:\Users\Mattias\Desktop\151006 test-master\workshop 2\Club\Club\bin\Release\Club.exe
 C:\Users\Mattias\Desktop\151006 test-master\workshop 2\Club\Club\bin\Release\Club.pdb
 C:\Users\Mattias\Desktop\151006 test-master\workshop 2\Club\Club\obj\Release\Club.csprojResolveAssemblyReference.cache
-C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\bin\Release\Club.exe.config
-C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\obj\Release\Club.exe
-C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\obj\Release\Club.pdb
-C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\bin\Release\Club.exe
-C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\bin\Release\Club.pdb
-C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\Workshop 2\Club\Club\obj\Release\Club.csprojResolveAssemblyReference.cache

@@ -82,7 +82,7 @@ namespace Club.Model
         }
 
         // Lägger till en medlem i katalogen vid hämtning av medlemmar från en textfil.
-        public Member[] AddMemberToArray(Member[] membersArray, Member memberToAdd)
+        private Member[] AddMemberToArray(Member[] membersArray, Member memberToAdd)
         {
             for (int i = 0; i < membersArray.Length; i++)
             {

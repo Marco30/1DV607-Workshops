@@ -8,7 +8,7 @@ namespace Club.Model
 {
     class MemberCatalog
     {
-        private Member[] members = new Member[100];
+        private Member[] members;
         MemberDAL membDAL = new MemberDAL();
 
         // Lägger till en hel katalog i medlemskatalogen.
@@ -23,6 +23,7 @@ namespace Club.Model
             return this.members;
         }
 
+        // Skapar en ny medlem när alla kriterier uppfylls.
         public void CreateNewMember(string[] regArr)
         {
             Member newMemb;
@@ -46,7 +47,7 @@ namespace Club.Model
                 }
             }
         }
-
+        
         // Kontrollerar om ett medlemsnummer är upptaget.
         public bool IsMemberNumberValid(Member memberToAdd)
         {
@@ -64,13 +65,28 @@ namespace Club.Model
         } 
 
         // Kontrollerar om ett medlemsnummer redan används.
-        public bool IsMemberNumberCorrect(int number)
+        public bool IsMemberCorrect(Member m)
         {
             for (int i = 0; i < this.members.Length; i++)
             {
                 if (this.members[i] != null)
                 {
-                    if (this.members[i].MemberNumber == number)
+                    if (this.members[i] == m)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool IsMemberNumbCorrect(int num)
+        {
+            for (int i = 0; i < this.members.Length; i++)
+            {
+                if (this.members[i] != null)
+                {
+                    if (this.members[i].MemberNumber == num)
                     {
                         return true;
                     }
@@ -93,14 +109,30 @@ namespace Club.Model
             return counter;
         }
 
-        // Hämtar en medlem via ett medlemsnummer.
-        public Member GetMemberByMemberNumber(int number)
+        // Hämtar en medlem via en Member.
+        public Member GetMemberByMember(Member m)
         {
             for (int i = 0; i < this.members.Length; i++)
             {
                 if (this.members[i] != null)
                 {
-                    if (this.members[i].MemberNumber == number)
+                    if (this.members[i] == m)
+                    {
+                        return this.members[i];
+                    }
+                }
+            }
+            return null;
+        }
+
+        // Hämtar en medlem via ett medlemsnummer.
+        public Member GetMemberByMemberNumber(int num)
+        {
+            for (int i = 0; i < this.members.Length; i++)
+            {
+                if (this.members[i] != null)
+                {
+                    if (this.members[i].MemberNumber == num)
                     {
                         return this.members[i];
                     }
@@ -110,7 +142,7 @@ namespace Club.Model
         }
 
         // Tar bort en medlem från katalogen via ett medlemsnummer.
-        public void DeleteMemberByMemberNumber(int number)
+        public void DeleteMember(Member m)
         {
             Member[] membersTemporary = new Member[100];
 
@@ -118,7 +150,7 @@ namespace Club.Model
             {
                 if (this.members[i] != null)
                 {
-                    if (this.members[i].MemberNumber == number)
+                    if (this.members[i].MemberNumber == m.MemberNumber)
                     {
                         membersTemporary = members.Where(w => w != members[i]).ToArray();
                         break;

@@ -9,7 +9,15 @@ namespace Club.Model
     class BoatCatalog
     {
         private Boat[] boats = new Boat[100];
-        BoatDAL boatDAL = new BoatDAL();
+        private MemberCatalog membC;
+        private BoatDAL boatDAL;
+        
+
+        public BoatCatalog(MemberCatalog mc) 
+        {
+            this.membC = mc;
+            this.boatDAL = new BoatDAL(this.membC);
+        }
 
         // Lägger till en hel katalog i båtkatalogen.
         public void AddFullCatalog()
@@ -24,7 +32,7 @@ namespace Club.Model
         }
 
         // Lägger till en båt i katalogen.
-        public void AddBoat(int type, int length, int ownedBy)
+        public void AddBoat(int type, int length, Member ownedBy)
         {
             Boat boatToAdd = new Boat(type, length, ownedBy);
 
@@ -39,13 +47,13 @@ namespace Club.Model
         }
 
         // Tar bort en båt från katalogen.
-        public void DeleteBoat(int memberNumber, int boatToDelete)
+        public void DeleteBoat(Member m, int boatToDelete)
         {
             int btd = 1;
             Boat[] boatsTemporary = new Boat[100];
             for (int i = 0; i < this.boats.Length; i++)
             {
-                if (this.boats[i] != null && this.boats[i].OwnedBy == memberNumber)
+                if (this.boats[i] != null && this.boats[i].OwnedBy == m)
                 {
                     if (btd == boatToDelete)
                     {
@@ -64,21 +72,21 @@ namespace Club.Model
         }
 
         // Tar bort alla båtar av en medlem från katalogen.
-        public void DeleteBoats(int memberNumber)
+        public void DeleteBoats(Member m)
         {
-            while (CountBoatsByMemberNumber(memberNumber) > 0)
+            while (CountBoatsByMember(m) > 0)
             {
-                DeleteBoat(memberNumber, 1);
+                DeleteBoat(m, 1);
             }
         }
 
         // Räknar antal båtar en medlem äger.
-        public int CountBoatsByMemberNumber(int memberNumber)
+        public int CountBoatsByMember(Member m)
         {
             int counter = 0;
             for (int i = 0; i < this.boats.Length; i++)
             {
-                if (this.boats[i] != null && this.boats[i].OwnedBy == memberNumber)
+                if (this.boats[i] != null && this.boats[i].OwnedBy == m)
                 {
                     counter++;
                 }
@@ -86,42 +94,43 @@ namespace Club.Model
             return counter;
         }
 
-        public void EditBoat(int[] boatEditInfo, int memberToEditBoatTo, int boatToEdit)
+        // Ändrar en båt.
+        public void EditBoat(object[] boatEditInfo, Member memberToEditBoatTo, int boatToEdit)
         {
-            Boat boatEdit = GetBoatByMemberNumberAndIndex(memberToEditBoatTo, boatToEdit);
-            if (boatEditInfo[0] == 1)
+            Boat boatEdit = GetBoatByMemberAndIndex(memberToEditBoatTo, boatToEdit);
+            if ((int)boatEditInfo[0] == 1)
             {
-                boatEdit.OwnedBy = boatEditInfo[1];
+                boatEdit.OwnedBy = membC.GetMemberByMemberNumber((int)boatEditInfo[1]);
             }
-            else if (boatEditInfo[0] == 2)
+            else if ((int)boatEditInfo[0] == 2)
             {
-                boatEdit.Type = boatEditInfo[1];
+                boatEdit.Type = (int)boatEditInfo[1];
             }
             else
             {
-                boatEdit.Length = boatEditInfo[1];
+                boatEdit.Length = (int)boatEditInfo[1];
             }
         }
 
         // Ändrar medlemsnumret på medlemmens båtar.
-        public void EditBoatsMemberNumber(int memberNumber, int newMemberNumber)
+        public void EditBoatsMemberNumber(Member m, int newMemberNumber)
         {
             for (int i = 0; i < this.boats.Length; i++)
             {
-                if (this.boats[i] != null && this.boats[i].OwnedBy == memberNumber)
+                if (this.boats[i] != null && this.boats[i].OwnedBy == m)
                 {
-                    this.boats[i].OwnedBy = newMemberNumber;
+                    this.boats[i].OwnedBy.MemberNumber = newMemberNumber;
                 }
             }
         }
 
         // Hämtar en båt via medlemsnummer och index.
-        public Boat GetBoatByMemberNumberAndIndex(int memberNumber, int boatIndex)
+        public Boat GetBoatByMemberAndIndex(Member m, int boatIndex)
         {
             int bi = 1;
             for (int i = 0; i < this.boats.Length; i++)
             {
-                if (this.boats[i] != null && this.boats[i].OwnedBy == memberNumber)
+                if (this.boats[i] != null && this.boats[i].OwnedBy == m)
                 {
                     if (bi == boatIndex)
                     {

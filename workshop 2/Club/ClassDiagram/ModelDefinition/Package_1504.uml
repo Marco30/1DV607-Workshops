@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="4624b633-daa9-4b96-bce9-342356b7fce2"
+  name="View" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="5c92236d-9100-4cd9-8e1e-59bc5a638aaf"
+        name="MenuView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7499a5a8-3aa8-4d0e-a108-1db1baec4878"
+        name="ViewMessage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="a275fd95-19fd-4fd5-8411-cf71305b762b">
+            <classMoniker
+              Id="dae4f1ed-a92b-4df4-8381-895ac241260a"
+              LastKnownName="Boat"
+              LastKnownLocation="Package_1506.uml" />
+          </dependency>
+          <dependency
+            Id="c79c5e67-7933-4e04-8512-ee773baa392a">
+            <classMoniker
+              Id="d414c451-5673-4740-9e59-3b66680afe49"
+              LastKnownName="Member"
+              LastKnownLocation="Package_1506.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="f99ea955-3710-470b-8b02-3eacd02e3920"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="membCatalog"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0c8b8bd7-f615-4dcc-a0a8-cda324858821"
+              LastKnownName="MemberCatalog"
+              LastKnownLocation="Package_1506.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5865674e-c8bd-4d9b-bcb2-89d459559db9"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="6a6da159-82ad-4678-a402-1946c33ab7e1"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="989c443e-c6bd-4003-925a-ff09b6fac6ef"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="99d9e3b1-93eb-449b-b6d5-3b0c86cd5a4d"
+                  name="membCatalog"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="22c1d99e-9160-4fad-8314-c72ef5de518c"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="boatCatalog"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="97510053-ba8a-40f5-a588-b4c9d671ac68"
+              LastKnownName="BoatCatalog"
+              LastKnownLocation="Package_1506.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8b34f306-38fb-42cf-a62f-8979d04c28da"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4d7bfc50-e715-4b92-be1f-e103667b8346"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f0f9f882-b981-42e5-aeee-ba69661acd18"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eaba7b2a-0651-44b2-9e15-1bc0fc89387b"
+                  name="boatCatalog"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

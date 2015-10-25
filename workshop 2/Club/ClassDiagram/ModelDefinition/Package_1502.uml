@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a5961e82-d23c-4fce-bf22-e184d7db455c"
+  name="Controller" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="31276cbe-7017-4809-af4a-4047700626dd"
+        name="MenuChoice"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="fb22035b-2fda-45c1-8c40-247de86fc9de">
+            <classMoniker
+              Id="d414c451-5673-4740-9e59-3b66680afe49"
+              LastKnownName="Member"
+              LastKnownLocation="Package_1506.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="4c12244e-385b-4374-ab03-1146b5b59444"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="v"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7499a5a8-3aa8-4d0e-a108-1db1baec4878"
+              LastKnownName="ViewMessage"
+              LastKnownLocation="Package_1504.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4abc7ec8-599f-4c87-afad-230bffa75888"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="6f71e859-4ade-485d-bd45-887e5a3e8dcc"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="05311129-bd94-413e-8612-af64faba84d1"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="503f716b-e0ae-4ffd-80c6-4dae0592178f"
+                  name="v"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="df0eca1e-6293-4d1b-ac2d-6fa6649ad3ea"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="membCatalog"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0c8b8bd7-f615-4dcc-a0a8-cda324858821"
+              LastKnownName="MemberCatalog"
+              LastKnownLocation="Package_1506.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3fba9908-1de4-4417-828e-ac8e641c3881"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ff89b39b-e919-4399-8ecd-7e77ea6534a2"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7b188337-038f-47c2-80aa-9a92e88ee0cd"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="60065ce5-5380-4342-894d-543e160e351b"
+                  name="membCatalog"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="63181f6b-f4d3-47d8-a45c-167810ffd4a6"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="boatCatalog"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="97510053-ba8a-40f5-a588-b4c9d671ac68"
+              LastKnownName="BoatCatalog"
+              LastKnownLocation="Package_1506.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9dcb253f-aaf2-4966-85b8-54baaa3fbbb1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a6ae7497-4557-4f1f-ad39-212c42dfbb70"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e506ac4e-a787-448b-8abb-5c8481370649"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e6e2ae23-2915-4963-9f61-f999ee79b7de"
+                  name="boatCatalog"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0fdeda87-312a-48ad-a77b-078db45937d8"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="startMenu"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5c92236d-9100-4cd9-8e1e-59bc5a638aaf"
+              LastKnownName="MenuView"
+              LastKnownLocation="Package_1504.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4843efc8-c7c6-4b9e-b099-b7b615407587"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="08420baf-34eb-49ba-b10e-5964915dddb6"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b41d4b74-83e2-4a90-bab6-96910f2b15b0"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c84e1a48-aa89-46e6-b008-0488572afcc5"
+                  name="startMenu"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

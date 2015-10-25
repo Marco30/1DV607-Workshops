@@ -9,6 +9,12 @@ namespace Club.Model
     class BoatDAL
     {
         private string path = AppDomain.CurrentDomain.BaseDirectory;
+        private MemberCatalog membC;
+
+        public BoatDAL(MemberCatalog mc)
+        {
+            this.membC = mc;
+        }
 
         // Hämtar alla båtar från en textfil.
         public Boat[] GetBoats()
@@ -38,7 +44,9 @@ namespace Club.Model
                 {
                     count = 0;
                     type = Int32.Parse(line);
-                    Boat newBoat = new Boat(type, length, ownedBy);
+
+                    Member newMemb = membC.GetMemberByMemberNumber(ownedBy);
+                    Boat newBoat = new Boat(type, length, newMemb);
                     allBoats = AddBoatToArray(allBoats, newBoat);
                 }
 
@@ -58,7 +66,7 @@ namespace Club.Model
             {
                 if (bo != null)
                 {
-                    lines[i] = bo.OwnedBy.ToString();
+                    lines[i] = bo.OwnedBy.MemberNumber.ToString();
                     i++;
                     lines[i] = bo.Length.ToString();
                     i++;
@@ -74,7 +82,7 @@ namespace Club.Model
         }
 
         // Lägger till en båt i katalogen vid hämtning av båtar från en textfil.
-        public Boat[] AddBoatToArray(Boat[] boatsArray, Boat boatToAdd)
+        private Boat[] AddBoatToArray(Boat[] boatsArray, Boat boatToAdd)
         {
             for (int i = 0; i < boatsArray.Length; i++)
             {

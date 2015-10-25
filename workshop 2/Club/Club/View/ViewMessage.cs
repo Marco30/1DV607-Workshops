@@ -141,8 +141,8 @@ namespace Club.View
                     {
                         if (membersList[i] != null)
                         {
-                            ShowMessage(membersList[i].PrintCompact());
-                            ShowMessage(String.Format("Antal båtar:\t{0}", this.boatCatalog.CountBoatsByMemberNumber(membersList[i].MemberNumber).ToString()));
+                            ShowMessage(PrintMemberCompact(membersList[i]));
+                            ShowMessage(String.Format("Antal båtar:\t{0}", this.boatCatalog.CountBoatsByMember(membersList[i]).ToString()));
                         }
                     }
                 }
@@ -154,13 +154,13 @@ namespace Club.View
                     {
                         if (membersList[i] != null)
                         {
-                            ShowMessage(membersList[i].PrintFull());
+                            ShowMessage(PrintFullMember(membersList[i]));
 
                             for (int j = 0; j < boatsList.Length; j++)
                             {
-                                if (boatsList[j] != null && boatsList[j].OwnedBy == membersList[i].MemberNumber)
+                                if (boatsList[j] != null && boatsList[j].OwnedBy.MemberNumber == membersList[i].MemberNumber)
                                 {
-                                    ShowMessage(String.Format("\nBåttyp:\t\t{0}\nLängd:\t\t{1}", boatsList[j].GetBoatType(), boatsList[j].Length));
+                                    ShowMessage(String.Format("\nBåttyp:\t\t{0}\nLängd:\t\t{1}", GetBoatTypeString(boatsList[j]), boatsList[j].Length));
                                 }
                             }
                             ShowMessage("\n");
@@ -182,11 +182,11 @@ namespace Club.View
             ListAllMembers();
             ShowMessage("\nVälj en medlem genom att skriva in ett medlemsnummer (numret inuti parentesen).");
 
-            int number = ChooseMember();
+            int memb = ChooseMember();
 
             ClearConsole();
             ShowMessage("[ MEDLEMSINFORMATION ]");
-            ShowMessage(this.membCatalog.GetMemberByMemberNumber(number).PrintFull());
+            ShowMessage(PrintFullMember(membCatalog.GetMemberByMemberNumber(memb)));
 
             ShowMessage("\nTryck på valfri knapp för att gå vidare.");
             ReadInput();
@@ -206,112 +206,42 @@ namespace Club.View
             {
                 for (int i = 0; i < membersList.Length; i++)
                 {
-                    
                     if (membersList[i] != null)
                     {
-                        ShowMessage(membersList[i].PrintListInfo());
+                        ShowMessage(PrintMemberListInfo(membersList[i]));
                     }
                 }
-            }
-        }
-
-
-        public void ListAllMembersWithBoat()
-        {
-            Member[] membersList = this.membCatalog.GetMembers();
-            Boat[] boatsList = this.boatCatalog.GetBoats();
-
-
-
-            if (this.membCatalog.CountMembers() == 0)
-            {
-                ShowErrorMessage("Inga medlemmar registrerade.", true);
-            }
-            else
-            {
-
-                List<int> termsList1 = new List<int>();
-                List<int> termsList2 = new List<int>();
-
-                bool lika = false;
-
-                for (int i = 0; i < boatsList.Length; i++)
-                {
-                    if (boatsList[i] != null)
-                    {
-                        termsList1.Add(boatsList[i].OwnedBy);
-                    }
-                }
-
-                foreach (int number in termsList1)
-                {
-                    if (!termsList2.Contains(number))
-                    {
-                        termsList2.Add(number);
-                    }
-                }
-
-
-           
-                        for (int M = 0; M < membersList.Length; M++)
-                        {
-
-
-                            if (membersList[M] != null)
-                            {
-
-
-                                    foreach (int number in termsList2)
-                                    {
-                                        if (number == membersList[M].MemberNumber) // Will match once.
-                                        {
-                                            lika = true;
-                                        }
-                                    }
-
-                                    if (lika == true)
-                                    {
-                                        ShowMessage(membersList[M].PrintListInfo());          
-                                    }
-
-                                    lika = false;
-
-                            }
-
-                        }
-                    
-                
             }
         }
 
         // Visar alla båtar som en medlem äger.
-        public int ListAllBoatsByMember(int memberNumber, string title)
+        public int ListAllBoatsByMember(Member memb, string title)
         {
-            if (this.boatCatalog.CountBoatsByMemberNumber(memberNumber) == 0)
+            if (this.boatCatalog.CountBoatsByMember(memb) == 0)
             {
                 ShowErrorMessage("Inga båtar finns registrerade för vald medlem.", true);
                 return 0;
             }
             else
             {
-                return ListBoatsByMemberNumber(memberNumber, title);
+                return ListBoatsByMember(memb, title);
             }
         }
 
         // Läser in information vid redigering av medlem.
-        public string[] ViewEditMember()
+        public object[] ViewEditMember()
         {
             ClearConsole();
             ShowMessage("[ REDIGERA MEDLEM ]\n");
             ListAllMembers();
             ShowMessage("\nVälj en medlem genom att skriva in ett medlemsnummer (numret inuti parentesen).");
 
-            int number = ChooseMember();
+            int memb = ChooseMember();
 
             ClearConsole();
 
-            ShowMessage(String.Format("[ REDIGERA '{0} {1}' ]", this.membCatalog.GetMemberByMemberNumber(number).FirstName, this.membCatalog.GetMemberByMemberNumber(number).LastName));
-            ShowMessage(this.membCatalog.GetMemberByMemberNumber(number).PrintFullWithNumberList());
+            ShowMessage(String.Format("[ REDIGERA '{0} {1}' ]", membCatalog.GetMemberByMemberNumber(memb).FirstName, membCatalog.GetMemberByMemberNumber(memb).LastName));
+            ShowMessage(PrintFullMemberWithNumberList(membCatalog.GetMemberByMemberNumber(memb)));
             ShowMessage("\nVälj i listan vilken egenskap som skall ändras.");
 
             int selectedAlternative;
@@ -327,20 +257,21 @@ namespace Club.View
             
             int inputInteger;
             bool inputIntegerResult;
-            string[] returnArr = new string[3];
-            returnArr[0] = number.ToString();
-            returnArr[1] = selectedAlternative.ToString();
+            object[] returnArr = new object[3];
+            returnArr[0] = memb;
+            returnArr[1] = selectedAlternative;
             if (selectedAlternative == 1)
             {
                 ShowMessage("Ändra förnamn till: ");
                 do
                 {
                     returnArr[2] = ReadInput();
-                    if (returnArr[2].Length <= 0)
+
+                    if (returnArr[2].ToString().Length <= 0)
                     {
                         ShowErrorMessage("Ange ett förnamn.", true);
                     }
-                } while (returnArr[2].Length <= 0);
+                } while (returnArr[2].ToString().Length <= 0);
             }
             else if (selectedAlternative == 2)
             {
@@ -348,11 +279,11 @@ namespace Club.View
                 do
                 {
                     returnArr[2] = ReadInput();
-                    if (returnArr[2].Length <= 0)
+                    if (returnArr[2].ToString().Length <= 0)
                     {
                         ShowErrorMessage("Ange ett efternamn.", true);
                     }
-                } while (returnArr[2].Length <= 0);
+                } while (returnArr[2].ToString().Length <= 0);
             }
             else if (selectedAlternative == 3)
             {
@@ -365,7 +296,7 @@ namespace Club.View
                         ShowErrorMessage("Ange ett giltligt personnummer.", true);
                     }
                 } while (!inputIntegerResult || !membCatalog.IsSocialSecurityNumberCorrect(inputInteger));
-                returnArr[2] = inputInteger.ToString();
+                returnArr[2] = inputInteger;
             }
             else
             {
@@ -377,12 +308,12 @@ namespace Club.View
                     {
                         ShowErrorMessage("Ange ett giltligt medlemsnummer.", true);
                     }
-                    if (membCatalog.IsMemberNumberCorrect(inputInteger))
+                    if (membCatalog.IsMemberNumbCorrect(inputInteger))
                     {
                         ShowErrorMessage("Medlemsnumret är upptaget.", true);
                     }
-                } while (!inputIntegerResult || membCatalog.IsMemberNumberCorrect(inputInteger));
-                returnArr[2] = inputInteger.ToString();
+                } while (!inputIntegerResult || membCatalog.IsMemberNumbCorrect(inputInteger));
+                returnArr[2] = inputInteger;
             }
             
             return returnArr;
@@ -406,11 +337,11 @@ namespace Club.View
             do
             {
                 validNumber = int.TryParse(ReadInput(), out number);
-                if (!this.membCatalog.IsMemberNumberCorrect(number))
+                if (!this.membCatalog.IsMemberNumbCorrect(number))
                 {
                     ShowErrorMessage("Välj en giltlig medlem.", true);
                 }
-            } while (!this.membCatalog.IsMemberNumberCorrect(number));
+            } while (!this.membCatalog.IsMemberNumbCorrect(number));
 
             return number;
         }
@@ -469,15 +400,14 @@ namespace Club.View
         {
             ClearConsole();
             ShowMessage(String.Format("[ {0} ]\n", title));
-            //ListAllMembers();
-            ListAllMembersWithBoat();
+            ListAllMembers();
             ShowMessage("\nVälj en medlem genom att skriva in ett medlemsnummer (numret inuti parentesen).");
 
             return ChooseMember();
         }
 
         // Visar lista med båtar som en medlem äger.
-        public int ListBoatsByMemberNumber(int memberNumber, string title)
+        public int ListBoatsByMember(Member memb, string title)
         {
             ClearConsole();
             ShowMessage(String.Format("[ {0} ]\n", title));
@@ -485,15 +415,15 @@ namespace Club.View
             int listOfBoatsCounter = 0;
             for (int i = 0; i < boatsList.Length; i++)
             {
-                if (boatsList[i] != null && boatsList[i].OwnedBy == memberNumber)
+                if (boatsList[i] != null && boatsList[i].OwnedBy == memb)
                 {
                     listOfBoatsCounter++;
-                    ShowMessage(String.Format("{0}. {1} {2}m", listOfBoatsCounter, GetBoatTypeString(boatsList[i].Type), boatsList[i].Length));
+                    ShowMessage(String.Format("{0}. {1} {2}m", listOfBoatsCounter, GetBoatTypeString(boatsList[i]), boatsList[i].Length));
                     
                 }
             }
 
-            ShowMessage("\nVälj i listan vilken båt som skall redigeras.");
+            ShowMessage("\nVälj i listan vilken båt som skall raderas.");
 
             bool validNumber = false;
             int number;
@@ -510,11 +440,11 @@ namespace Club.View
         }
 
         // Läser in information vid redigering av båt.
-        public int[] ViewEditBoat(int memberNumber, int boatToEdit)
+        public object[] ViewEditBoat(Member m, int boatToEdit)
         {
             ClearConsole();
             ShowMessage("[ REDIGERA BÅT ]");
-            ShowMessage(this.boatCatalog.GetBoatByMemberNumberAndIndex(memberNumber,boatToEdit).PrintFullWithNumberList());
+            ShowMessage(PrintFullBoatWithNumberList(this.boatCatalog.GetBoatByMemberAndIndex(m,boatToEdit)));
             ShowMessage("\nVälj i listan vilken egenskap som skall ändras.");
 
             int selectedAlternative;
@@ -531,7 +461,7 @@ namespace Club.View
             ShowMessage("[ REDIGERA BÅT ]\n");
             int inputInteger;
             bool inputIntegerResult = false;
-            int[] returnArr = new int[2];
+            object[] returnArr = new object[2];
             returnArr[0] = selectedAlternative;
             if (selectedAlternative == 1)
             {
@@ -581,31 +511,7 @@ namespace Club.View
             return "1. Motorbåt\n2. Segelbåt\n3. Roddbåt\n4. Kanot\n5. Övrigt";
         }
 
-        // Returnerar båttyp.
-        public string GetBoatTypeString(int type)
-        {
-            if (type == 1)
-            {
-                return "Motorbåt";
-            }
-            else if (type == 2)
-            {
-                return "Segelbåt";
-            }
-            else if (type == 3)
-            {
-                return "Roddbåt";
-            }
-            else if (type == 4)
-            {
-                return "Kanot";
-            }
-            else
-            {
-                return "Övrigt";
-            }
-        }
-
+        // Registrerad medlem. Gå vidare.
         public void RegisteredMemberResponse()
         {
             ClearConsole();
@@ -614,6 +520,7 @@ namespace Club.View
             ReadInput();
         }
 
+        // Medlemsnumret är upptaget. Gå vidare.
         public void MemberNumberIsTakenResponse()
         {
             ShowErrorMessage("Medlemsnumret är upptaget.", true);
@@ -621,6 +528,7 @@ namespace Club.View
             ReadInput();
         }
 
+        // Medlemsnumret saknas. Gå vidare.
         public void MemberNumberDoesNotExistResponse()
         {
             ShowErrorMessage("Medlemsnumret existerar inte.", true);
@@ -628,12 +536,69 @@ namespace Club.View
             ReadInput();
         }
 
+        // "Gå-vidare-metod".
         public void ResponseMessage(string title, string message)
         {
             ClearConsole();
             ShowMessage(String.Format("[ {0} ]\n", title));
             ShowMessage(String.Format("{0}. Tryck på valfri knapp för att gå vidare.", message));
             ReadInput();
+        }
+
+        // Returnerar båttyp.
+        public string GetBoatTypeString(Boat b)
+        {
+            if (b.Type == 1)
+            {
+                return "Motorbåt";
+            }
+
+            if (b.Type == 2)
+            {
+                return "Segelbåt";
+            }
+
+            if (b.Type == 3)
+            {
+                return "Roddbåt";
+            }
+
+            if (b.Type == 4)
+            {
+                return "Kanot";
+            }
+
+            return "Övrigt";
+        }
+
+        // Skapar en numrerad sträng med fullständig information om en båt.
+        public string PrintFullBoatWithNumberList(Boat b)
+        {
+            return String.Format("\n1. Ägare:\t{0}\n2. Typ:\t\t{1}\n3. Längd:\t{2}", b.OwnedBy.MemberNumber, GetBoatTypeString(b), b.Length);
+        }
+
+        // Skapar en sträng med fullständig information om medlemmen.
+        public string PrintFullMember(Member m)
+        {
+            return String.Format("\nNamn:\t\t{0}\nEfternamn:\t{1}\nPersonnummer:\t{2}\nMedlemsnummer:\t{3}", m.FirstName, m.LastName, m.SocialSecurityNumber, m.MemberNumber);
+        }
+
+        // Skapar en numrerad sträng med fullständig information om medlemmen.
+        public string PrintFullMemberWithNumberList(Member m)
+        {
+            return String.Format("\n1. Namn:\t\t{0}\n2. Efternamn:\t\t{1}\n3. Personnummer:\t{2}\n4. Medlemsnummer:\t{3}", m.FirstName, m.LastName, m.SocialSecurityNumber, m.MemberNumber);
+        }
+
+        // Skapar en sträng med kompakt information om medlemmen.
+        public string PrintMemberCompact(Member m)
+        {
+            return String.Format("\nNamn:\t\t{0}\nEfternamn:\t{1}\nMedlemsnummer\t{2}", m.FirstName, m.LastName, m.MemberNumber);
+        }
+
+        // Skapar en sträng med medlemsinformation.
+        public string PrintMemberListInfo(Member m)
+        {
+            return String.Format("{0} {1} ({2})", m.FirstName, m.LastName, m.MemberNumber);
         }
     }
 }
