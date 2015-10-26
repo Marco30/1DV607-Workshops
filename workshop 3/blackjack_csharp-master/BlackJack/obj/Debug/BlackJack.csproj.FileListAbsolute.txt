@@ -10,3 +10,5 @@ C:\Users\Mattias\Desktop\test W3\blackjack_csharp-master\BlackJack\obj\Debug\Bla
 C:\Users\Mattias\Desktop\test W3\blackjack_csharp-master\BlackJack\obj\Debug\BlackJack.pdb
 C:\Users\Mattias\Desktop\Linnéuniversitetet\Objektorienterad analys och design med UML\Workshop 3\test W3 marco\blackjack_csharp-master\BlackJack\obj\Debug\BlackJack.exe
 C:\Users\Mattias\Desktop\Linnéuniversitetet\Objektorienterad analys och design med UML\Workshop 3\test W3 marco\blackjack_csharp-master\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\workshop 3\blackjack_csharp-master\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Marco\1DV607-Workshops\1DV607-Workshops\workshop 3\blackjack_csharp-master\BlackJack\obj\Debug\BlackJack.pdb
