@@ -440,11 +440,11 @@ namespace Club.View
         }
 
         // Läser in information vid redigering av båt.
-        public object[] ViewEditBoat(Member m, int boatToEdit)
+        public object[] ViewEditBoat(Member m, int boatToEditIndex)
         {
             ClearConsole();
             ShowMessage("[ REDIGERA BÅT ]");
-            ShowMessage(PrintFullBoatWithNumberList(this.boatCatalog.GetBoatByMemberAndIndex(m,boatToEdit)));
+            ShowMessage(PrintFullBoatWithNumberList(this.boatCatalog.GetBoatByMemberAndIndex(m,boatToEditIndex)));
             ShowMessage("\nVälj i listan vilken egenskap som skall ändras.");
 
             int selectedAlternative;
